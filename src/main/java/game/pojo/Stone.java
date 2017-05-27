@@ -5,11 +5,6 @@ package game.pojo;
  */
 
 public class Stone {
-
-    public enum Color {
-        RED, BLUE
-    }
-
     public Stone(Color ownerColor) {
         this.ownerColor = ownerColor;
     }

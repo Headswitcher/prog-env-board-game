@@ -80,7 +80,7 @@ public class Board {
             for (int j = 0; j < columnSize && !isGameOver; j++) {
                 Field actualField = actualBoard.get(i).get(j);
                 if (!actualField.isEmpty()) {
-                    Stone.Color actualFieldOwnerColor = actualField.getStone().getOwnerColor();
+                    Color actualFieldOwnerColor = actualField.getStone().getOwnerColor();
                     if (!actualBoard.get(i - 1).get(j).isEmpty() && !actualBoard.get(i + 1).get(j).isEmpty()) {
                         if (actualBoard.get(i - 1).get(j).getStone().getOwnerColor().equals(actualFieldOwnerColor) && actualBoard.get(i + 1).get(j).getStone().getOwnerColor().equals(actualFieldOwnerColor)) {
                             isGameOver = true;
@@ -94,7 +94,7 @@ public class Board {
             for (int j = 1; j < columnSize - 1 && !isGameOver; j++) {
                 Field actualField = actualBoard.get(i).get(j);
                 if (!actualField.isEmpty()) {
-                    Stone.Color actualFieldOwnerColor = actualField.getStone().getOwnerColor();
+                    Color actualFieldOwnerColor = actualField.getStone().getOwnerColor();
                     if (!actualBoard.get(i).get(j - 1).isEmpty() && !actualBoard.get(i).get(j + 1).isEmpty()) {
                         if (actualBoard.get(i).get(j - 1).getStone().getOwnerColor().equals(actualFieldOwnerColor) && actualBoard.get(i).get(j + 1).getStone().getOwnerColor().equals(actualFieldOwnerColor)) {
                             isGameOver = true;
@@ -108,15 +108,15 @@ public class Board {
             for (int j = 1; j < columnSize - 1; j++) {
                 Field actualField = actualBoard.get(i).get(j);
                 if (!actualField.isEmpty()) {
-                    Stone.Color actualFieldOwnerColor = actualField.getStone().getOwnerColor();
-                    if (!actualBoard.get(i - 1).get(j - 1).isEmpty() && !actualBoard.get(i - 1).get(j - 1).isEmpty()) {
-                        if (actualBoard.get(i - 1).get(j - 1).getStone().getOwnerColor().equals(actualFieldOwnerColor) && actualBoard.get(i - 1).get(j - 1).getStone().getOwnerColor().equals(actualFieldOwnerColor)) {
+                    Color actualFieldOwnerColor = actualField.getStone().getOwnerColor();
+                    if (!actualBoard.get(i - 1).get(j - 1).isEmpty() && !actualBoard.get(i + 1).get(j + 1).isEmpty()) {
+                        if (actualBoard.get(i - 1).get(j - 1).getStone().getOwnerColor().equals(actualFieldOwnerColor) && actualBoard.get(i + 1).get(j + 1).getStone().getOwnerColor().equals(actualFieldOwnerColor)) {
                             isGameOver = true;
                             break;
                         }
                     }
-                    if (!actualBoard.get(i + 1).get(j + 1).isEmpty() && !actualBoard.get(i + 1).get(j + 1).isEmpty()) {
-                        if (actualBoard.get(i + 1).get(j + 1).getStone().getOwnerColor().equals(actualFieldOwnerColor) && actualBoard.get(i + 1).get(j + 1).getStone().getOwnerColor().equals(actualFieldOwnerColor)) {
+                    if (!actualBoard.get(i - 1).get(j + 1).isEmpty() && !actualBoard.get(i + 1).get(j - 1).isEmpty()) {
+                        if (actualBoard.get(i - 1).get(j + 1).getStone().getOwnerColor().equals(actualFieldOwnerColor) && actualBoard.get(i + 1).get(j - 1).getStone().getOwnerColor().equals(actualFieldOwnerColor)) {
                             isGameOver = true;
                         }
                     }
