@@ -1,15 +1,20 @@
-package game;
+package game.pojo;
 
 /**
  * Created by Headswitcher on 2017. 05. 27..
  */
 
 public class Stone {
-    private enum Color {
+
+    public enum Color {
         RED, BLUE
     }
 
-    Color ownerColor;
+    public Stone(Color ownerColor) {
+        this.ownerColor = ownerColor;
+    }
+
+    private Color ownerColor;
 
     public Color getOwnerColor() {
         return ownerColor;
