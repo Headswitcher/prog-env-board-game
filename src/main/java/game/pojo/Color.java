@@ -1,7 +1,7 @@
 package game.pojo;
 
 /**
- * Created by Headswitcher on 2017. 05. 27..
+ * A játék színeit reprezentáló enum osztály , amely lehet <code>PIROS</code> vagy <code>KÉK</code>
  */
 
 public enum Color {

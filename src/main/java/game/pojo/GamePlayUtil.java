@@ -5,10 +5,23 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Created by Headswitcher on 2017. 05. 27..
+ * A játékmechanikáért felelős osztály
  */
 public class GamePlayUtil {
 
+    /**
+     * Feldolgozzuk a bemenetet ami az alábbi formában érkezik
+     * <p>(Honnan sor,Honnan oszlop)-(Hova sor, Hova oszlop)</p>
+     * <p>Pélául: <code>(0,1)-(1,0)</code></p>
+     * <p>
+     * Ezt a bemenő adat dolgozza fel majd eldönti hogy szabályos-e a lépés.
+     * <p>
+     * Szabályos a lépés , ha a honnan mező-ben van korong és az a korong az övé , üres az a mező ahova tenni akarja , és szomszédos a mozgatás.
+     *
+     * @param actualBoard  Az aktuális tábla
+     * @param actualPlayer Az aktuális játékos
+     * @throws IOException
+     */
     public static void processChoice(Board actualBoard, Player actualPlayer) throws IOException {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

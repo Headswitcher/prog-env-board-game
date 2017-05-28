@@ -5,10 +5,16 @@ import game.pojo.Player;
 import java.io.IOException;
 
 /**
- * Created by Headswitcher on 2017. 05. 26..
+ * A játékot végrehajtó Main metódust tartalmazó osztályt
  */
 public class Main {
 
+    /**
+     * Initializál egy játékot majd addig folyatódik még véget nem ér egy élállapottal majd kihírdetődik az eredmény.
+     * A játék lépésenként halad a célállapotokig.
+     *
+     * Lásd {@link Board}.isGameOver , {@link GamePlayUtil}.processChoice
+     */
     public static void main(String[] args) {
 
         Board board = new Board();
