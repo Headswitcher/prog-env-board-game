@@ -29,13 +29,13 @@ public class Field {
     }
 
     public static Field getFieldWithRedStone() {
-        Stone redStone = new Stone(Color.RED);
+        Stone redStone = new Stone(Color.PIROS);
         Field fieldWithRedStone = new Field(false, redStone);
         return fieldWithRedStone;
     }
 
     public static Field getFieldWithBlueStone() {
-        Stone blueStone = new Stone(Color.BLUE);
+        Stone blueStone = new Stone(Color.KÉK);
         Field fieldWithBlueStone = new Field(false, blueStone);
         return fieldWithBlueStone;
     }

@@ -5,5 +5,5 @@ package game.pojo;
  */
 
 public enum Color {
-    RED, BLUE
+    PIROS, KÉK
 }

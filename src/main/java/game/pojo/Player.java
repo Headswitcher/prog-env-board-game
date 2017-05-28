@@ -14,10 +14,26 @@ public class Player {
     }
 
     public static Player getRedPlayer() {
-        return new Player("RED", Color.RED);
+        return new Player("Első Játékos", Color.PIROS);
     }
 
     public static Player getBluePlayer() {
-        return new Player("BLUE", Color.BLUE);
+        return new Player("Második Játékos", Color.KÉK);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPlayerColor(Color playerColor) {
+        this.playerColor = playerColor;
+    }
+
+    public Color getPlayerColor() {
+        return playerColor;
     }
 }
