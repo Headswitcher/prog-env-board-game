@@ -1,5 +1,5 @@
 import game.pojo.Board;
-import game.pojo.GamePlayUtil;
+import game.util.GamePlayUtil;
 import game.pojo.Player;
 import org.pmw.tinylog.Logger;
 

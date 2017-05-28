@@ -185,5 +185,12 @@ public class Board {
         return isGameOver;
     }
 
-
+    /**
+     * Visszadja az aktuális táblát
+     *
+     * @return <code>actualBoard</code> aktuális tábla
+     */
+    public List<List<Field>> getActualBoard() {
+        return actualBoard;
+    }
 }

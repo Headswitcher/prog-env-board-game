@@ -1,5 +1,8 @@
-package game.pojo;
+package game.util;
 
+import game.pojo.Board;
+import game.pojo.Field;
+import game.pojo.Player;
 import org.pmw.tinylog.Logger;
 
 import java.io.BufferedReader;
@@ -41,8 +44,8 @@ public class GamePlayUtil {
         Integer toRow = new Integer(splitedToCoordinate[0]);
         Integer toColumn = new Integer(splitedToCoordinate[1]);
 
-        Field fromField = actualBoard.actualBoard.get(fromRow).get(fromColumn);
-        Field toField = actualBoard.actualBoard.get(toRow).get(toColumn);
+        Field fromField = actualBoard.getActualBoard().get(fromRow).get(fromColumn);
+        Field toField = actualBoard.getActualBoard().get(toRow).get(toColumn);
 
 
         if (!fromField.isEmpty() && fromField.getStone().getOwnerColor().equals(actualPlayer.getPlayerColor()) && toField.isEmpty() &&
