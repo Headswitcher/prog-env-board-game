@@ -1,7 +1,7 @@
 package game.pojo;
 
 /**
- * Egy játékos korogját ábrázoló osztály, amelynek leírja még a szinét is
+ * Egy játékos korogját ábrázoló osztály, amelynek leírja még a szinét is.
  * Lásd {@link Color}
  */
 
@@ -13,15 +13,18 @@ public class Stone {
     private Color ownerColor;
 
     /**
-     * Ez a konstuktor létrehoz egy <code>Stone</code>-t amelyhez hozzárendeljük a paraméterben adott <code>ownerColor</code>-t
+     * Ez a konstuktor létrehoz egy <code>Stone</code>-t amelyhez hozzárendeljük a paraméterben adott <code>ownerColor</code>-t.
      *
      * @param ownerColor a korong színe , {@link Color}
      */
     public Stone(Color ownerColor) {
         this.ownerColor = ownerColor;
     }
+
     /**
-     * Visszaadja a <code>Stone</code> színét
+     * Visszaadja a <code>Stone</code> színét.
+     *
+     * @return színe a korongnak
      */
     public Color getOwnerColor() {
         return ownerColor;

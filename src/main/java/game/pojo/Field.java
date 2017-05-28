@@ -10,12 +10,12 @@ public class Field {
     private boolean isEmpty;
 
     /**
-     * Egy korongot tárolunk
+     * Egy korongot tárolunk.
      */
     private Stone stone;
 
     /**
-     * Alap konstruktor egy mező beállítására
+     * Alap konstruktor egy mező beállítására.
      *
      * @param isEmpty üres-e a mező
      * @param stone   egy <code>Stone</code> tipusú korong
@@ -26,14 +26,14 @@ public class Field {
     }
 
     /**
-     * @return Üres e az adott mező
+     * @return Üres e az adott mező.
      */
     public boolean isEmpty() {
         return isEmpty;
     }
 
     /**
-     * Az empty mező beállítására szolgáló metódus
+     * Az empty mező beállítására szolgáló metódus.
      *
      * @param empty Üres e az adott mező
      */
@@ -42,7 +42,7 @@ public class Field {
     }
 
     /**
-     * Visszaadja az osztály <code>Stone</code> mezőjét
+     * Visszaadja az osztály <code>Stone</code> mezőjét.
      *
      * @return mező korongja
      */
@@ -51,7 +51,7 @@ public class Field {
     }
 
     /**
-     * Beállítja a korong <code>Stone</code>-ját
+     * Beállítja a korong <code>Stone</code>-ját.
      *
      * @param stone beállítja a mező korongját
      */
@@ -80,7 +80,7 @@ public class Field {
     }
 
     /**
-     * Vissza ad egy üres mezőt
+     * Vissza ad egy üres mezőt.
      *
      * @return egy mezőt ami üres
      */

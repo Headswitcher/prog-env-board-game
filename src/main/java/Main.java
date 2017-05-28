@@ -6,14 +6,17 @@ import org.pmw.tinylog.Logger;
 import java.io.IOException;
 
 /**
- * A játékot végrehajtó Main metódust tartalmazó osztályt
+ * A játékot végrehajtó Main metódust tartalmazó osztályt.
  */
 public class Main {
+
     /**
      * Initializál egy játékot majd addig folyatódik még véget nem ér egy élállapottal majd kihírdetődik az eredmény.
      * A játék lépésenként halad a célállapotokig.
-     *
+     * <p>
      * Lásd {@link Board}.isGameOver , {@link GamePlayUtil}.processChoice
+     *
+     * @param args Nem kerül felhasználásra
      */
     public static void main(String[] args) {
         Logger.info("Program indulása");
@@ -53,6 +56,7 @@ public class Main {
             try {
                 GamePlayUtil.processChoice(board, actualPlayer);
             } catch (IOException e) {
+                Logger.error("Hibás bemenet");
                 e.printStackTrace();
             }
             Logger.info("Tábla kiíratás");

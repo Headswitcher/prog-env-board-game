@@ -4,7 +4,6 @@ import org.pmw.tinylog.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * Ez az osztály reprezentálja a játébkeli táblát. A játékbeli obijektumokat fogja össze
@@ -15,7 +14,15 @@ public class Board {
     /**
      * Ezek a Fieldek a tábla méretekért adják meg.
      */
+
+
+    /**
+     * Sor méretéért felelős mező.
+     */
     private int rowSize = 5;
+    /**
+     * Oszlop méretéért felelős mező.
+     */
     private int columnSize = 4;
 
     /**
@@ -38,33 +45,33 @@ public class Board {
      * </pre>
      */
     public Board() {
-        List<Field> firstRow = new ArrayList<Field>();
+        List<Field> firstRow = new ArrayList<>();
         firstRow.add(Field.getFieldWithBlueStone());
         firstRow.add(Field.getFieldWithRedStone());
         firstRow.add(Field.getFieldWithBlueStone());
         firstRow.add(Field.getFieldWithRedStone());
 
-        List<Field> secondRow = new ArrayList<Field>();
+        List<Field> secondRow = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             secondRow.add(Field.getEmptyField());
         }
 
-        List<Field> thirdRow = new ArrayList<Field>();
+        List<Field> thirdRow = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             thirdRow.add(Field.getEmptyField());
         }
 
-        List<Field> forthRow = new ArrayList<Field>();
+        List<Field> forthRow = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             forthRow.add(Field.getEmptyField());
         }
-        List<Field> fifthRow = new ArrayList<Field>();
+        List<Field> fifthRow = new ArrayList<>();
         fifthRow.add(Field.getFieldWithRedStone());
         fifthRow.add(Field.getFieldWithBlueStone());
         fifthRow.add(Field.getFieldWithRedStone());
         fifthRow.add(Field.getFieldWithBlueStone());
 
-        List<List<Field>> initializedBoard = new ArrayList<List<Field>>();
+        List<List<Field>> initializedBoard = new ArrayList<>();
         initializedBoard.add(firstRow);
         initializedBoard.add(secondRow);
         initializedBoard.add(thirdRow);
@@ -186,7 +193,7 @@ public class Board {
     }
 
     /**
-     * Visszadja az aktuális táblát
+     * Visszadja az aktuális táblát.
      *
      * @return <code>actualBoard</code> aktuális tábla
      */

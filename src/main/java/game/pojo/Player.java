@@ -7,7 +7,14 @@ package game.pojo;
  */
 public class Player {
 
+    /**
+     * Játékos neve.
+     */
     String name;
+    /**
+     * Játékos színe.
+     * <br>Lásd {@link Color}
+     */
     Color playerColor;
 
     /**
@@ -36,7 +43,7 @@ public class Player {
     }
 
     /**
-     * Visszaadja a játkos nevét
+     * Visszaadja a játkos nevét.
      *
      * @return A játékos nevét
      */
@@ -45,7 +52,7 @@ public class Player {
     }
 
     /**
-     * Beállítja a játékos nevét
+     * Beállítja a játékos nevét.
      *
      * @param name , a játkos neve
      */
@@ -54,7 +61,7 @@ public class Player {
     }
 
     /**
-     * Visszaadja a játkos színét
+     * Visszaadja a játkos színét.
      *
      * @return a játékos színét
      */

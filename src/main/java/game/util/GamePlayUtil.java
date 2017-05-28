@@ -10,12 +10,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * A játékmechanikáért felelős osztály
+ * A játékmechanikáért felelős osztály.
  */
 public class GamePlayUtil {
 
     /**
-     * Feldolgozzuk a bemenetet ami az alábbi formában érkezik
+     * Feldolgozzuk a bemenetet ami az alábbi formában érkezik.
      * <p>(Honnan sor,Honnan oszlop)-(Hova sor, Hova oszlop)</p>
      * <p>Pélául: <code>(0,1)-(1,0)</code></p>
      * <p>
@@ -25,7 +25,7 @@ public class GamePlayUtil {
      *
      * @param actualBoard  Az aktuális tábla
      * @param actualPlayer Az aktuális játékos
-     * @throws IOException
+     * @throws IOException ha a bemenet hibás
      */
     public static void processChoice(Board actualBoard, Player actualPlayer) throws IOException {
         Logger.info("GamePlayUtil.processChoice " + actualBoard + " " + actualPlayer.getPlayerColor());
