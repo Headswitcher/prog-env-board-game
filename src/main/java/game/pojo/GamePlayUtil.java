@@ -1,5 +1,7 @@
 package game.pojo;
 
+import org.pmw.tinylog.Logger;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -23,9 +25,10 @@ public class GamePlayUtil {
      * @throws IOException
      */
     public static void processChoice(Board actualBoard, Player actualPlayer) throws IOException {
-
+        Logger.info("GamePlayUtil.processChoice " + actualBoard + " " + actualPlayer.getPlayerColor());
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String playerChoice = reader.readLine();
+        Logger.info(playerChoice);
 
         String[] twoFieldCoordinate = playerChoice.split("-");
         String fromCoordinates = twoFieldCoordinate[0];
@@ -41,16 +44,19 @@ public class GamePlayUtil {
         Field fromField = actualBoard.actualBoard.get(fromRow).get(fromColumn);
         Field toField = actualBoard.actualBoard.get(toRow).get(toColumn);
 
+
         if (!fromField.isEmpty() && fromField.getStone().getOwnerColor().equals(actualPlayer.getPlayerColor()) && toField.isEmpty() &&
                 (((fromRow + 1 == toRow || fromRow - 1 == toRow) && fromColumn.intValue() == toColumn.intValue())
                         || ((fromColumn + 1 == toColumn || fromColumn - 1 == toColumn) && toRow.intValue() == fromRow.intValue()))) {
 
+            Logger.info("Sikeres mozgatás");
             toField.setEmpty(false);
             toField.setStone(fromField.getStone());
 
             fromField.setEmpty(true);
             fromField.setStone(null);
         } else {
+            Logger.info("Sikertelen mozgatás");
             System.out.println("Ezt nem lépheted meg,kérlek válassz egy másik helyes lépést.");
             processChoice(actualBoard, actualPlayer);
         }

@@ -1,5 +1,7 @@
 package game.pojo;
 
+import org.pmw.tinylog.Logger;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -179,7 +181,7 @@ public class Board {
                 }
             }
         }
-
+        Logger.info("isGameOver:" + isGameOver);
         return isGameOver;
     }
 
