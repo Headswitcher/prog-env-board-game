@@ -70,11 +70,13 @@ public class GamePlayUtil {
             } else {
                 Logger.info("Sikertelen mozgatás");
                 System.out.println("Ezt nem lépheted meg,kérlek válassz egy másik helyes lépést.");
+                actualBoard.printActualBoard();
                 processChoice(actualBoard, actualPlayer);
             }
         } catch (Exception e) {
             Logger.error("Hibás bemenet");
             System.out.println("Ezt nem lépheted meg,kérlek válassz egy másik helyes lépést.");
+            actualBoard.printActualBoard();
             processChoice(actualBoard, actualPlayer);
         }
     }

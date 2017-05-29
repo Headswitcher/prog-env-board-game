@@ -94,11 +94,13 @@ public class Board {
     public void printActualBoard() {
         for (int i = 0; i < rowSize; i++) {
             if (i == 0) {
-                System.out.print("\n+---+---+---+---+\n");
+            	System.out.print("  +-0-+-1-+-2-+-3-+\n");
+                System.out.print("  +---+---+---+---+\n");
             }
             for (int j = 0; j < columnSize; j++) {
                 Field actualField = actualBoard.get(i).get(j);
                 if (j == 0) {
+                	System.out.print(i + ".");
                     System.out.print("| ");
                     if (!actualField.isEmpty()) {
                         if (actualField.getStone().getOwnerColor().equals(Color.KÉK))
@@ -124,7 +126,7 @@ public class Board {
                     }
                 }
             }
-            System.out.print("\n+---+---+---+---+\n");
+            System.out.print("\n  +---+---+---+---+\n");
         }
 
 
