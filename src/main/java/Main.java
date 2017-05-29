@@ -53,12 +53,9 @@ public class Main {
 
             }
             System.out.println(actualPlayer.getName() + " következik, a színed:" + actualPlayer.getPlayerColor());
-            try {
-                GamePlayUtil.processChoice(board, actualPlayer);
-            } catch (IOException e) {
-                Logger.error("Hibás bemenet");
-                e.printStackTrace();
-            }
+
+            GamePlayUtil.processChoice(board, actualPlayer);
+
             Logger.info("Tábla kiíratás");
             board.printActualBoard();
             Logger.info("Kör zárása");

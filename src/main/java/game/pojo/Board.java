@@ -95,14 +95,35 @@ public class Board {
         for (int i = 0; i < rowSize; i++) {
             for (int j = 0; j < columnSize; j++) {
                 Field actualField = actualBoard.get(i).get(j);
-                if (!actualField.isEmpty()) {
-                    System.out.print(actualField.getStone().getOwnerColor().name() + "(" + i + "," + j + ")" + " ");
+                if (j == 0) {
+                    System.out.print("| ");
+                    if (!actualField.isEmpty()) {
+                        if (actualField.getStone().getOwnerColor().equals(Color.KÉK))
+                            System.out.print("K |");
+                        else {
+                            System.out.print("P |");
+                        }
+                    } else {
+                        System.out.print("  |");
+                    }
+
                 } else {
-                    System.out.print("ÜRES" + "(" + i + "," + j + ")" + " ");
+                    if (!actualField.isEmpty()) {
+
+                        if (actualField.getStone().getOwnerColor().equals(Color.KÉK))
+                            System.out.print(" K |");
+                        else {
+                            System.out.print(" P |");
+                        }
+
+                    } else {
+                        System.out.print("   |");
+                    }
                 }
             }
-            System.out.println();
+            System.out.print("\n+---+---+---+---+\n");
         }
+
 
     }
 
@@ -199,5 +220,23 @@ public class Board {
      */
     public List<List<Field>> getActualBoard() {
         return actualBoard;
+    }
+
+    /**
+     * Vissza adja az aktuális tábla sor méretét
+     *
+     * @return <code>actualBoard</code> Sor méretét adja vissza.
+     */
+    public int getRowSize() {
+        return rowSize;
+    }
+
+    /**
+     * Visszaadja az aktuális tábla oszlop méretét
+     *
+     * @return <code>actualBoard</code> oszlop méretét adja vissza.
+     */
+    public int getColumnSize() {
+        return columnSize;
     }
 }

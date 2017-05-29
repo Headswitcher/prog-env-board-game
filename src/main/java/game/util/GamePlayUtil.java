@@ -27,39 +27,54 @@ public class GamePlayUtil {
      * @param actualPlayer Az aktuális játékos
      * @throws IOException ha a bemenet hibás
      */
-    public static void processChoice(Board actualBoard, Player actualPlayer) throws IOException {
+    public static void processChoice(Board actualBoard, Player actualPlayer) {
         Logger.info("GamePlayUtil.processChoice " + actualBoard + " " + actualPlayer.getPlayerColor());
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String playerChoice = reader.readLine();
-        Logger.info(playerChoice);
+        String playerChoice = null;
+        try {
+            playerChoice = reader.readLine();
 
-        String[] twoFieldCoordinate = playerChoice.split("-");
-        String fromCoordinates = twoFieldCoordinate[0];
-        String[] splitedFromCoordinate = fromCoordinates.split(",");
-        Integer fromRow = new Integer(splitedFromCoordinate[0]);
-        Integer fromColumn = new Integer(splitedFromCoordinate[1]);
+            Logger.info(playerChoice);
 
-        String toCoordinates = twoFieldCoordinate[1];
-        String[] splitedToCoordinate = toCoordinates.split(",");
-        Integer toRow = new Integer(splitedToCoordinate[0]);
-        Integer toColumn = new Integer(splitedToCoordinate[1]);
+            String[] twoFieldCoordinate = playerChoice.split("-");
+            String fromCoordinates = twoFieldCoordinate[0];
+            String[] splitedFromCoordinate = fromCoordinates.split(",");
+            Integer fromRow = new Integer(splitedFromCoordinate[0]);
+            Integer fromColumn = new Integer(splitedFromCoordinate[1]);
 
-        Field fromField = actualBoard.getActualBoard().get(fromRow).get(fromColumn);
-        Field toField = actualBoard.getActualBoard().get(toRow).get(toColumn);
+            String toCoordinates = twoFieldCoordinate[1];
+            String[] splitedToCoordinate = toCoordinates.split(",");
+            Integer toRow = new Integer(splitedToCoordinate[0]);
+            Integer toColumn = new Integer(splitedToCoordinate[1]);
+
+            if ( !(toRow >= 0 && toRow < actualBoard.getRowSize() && toColumn >=0 && toColumn < actualBoard.getColumnSize()
+                    && fromRow >=0 && fromRow < actualBoard.getRowSize() && fromColumn >=0   && fromColumn < actualBoard.getColumnSize())){
+                Logger.error("Formailag jó érték, de kieső számok ");
+                throw new IOException();
+
+            }
+
+            Field fromField = actualBoard.getActualBoard().get(fromRow).get(fromColumn);
+            Field toField = actualBoard.getActualBoard().get(toRow).get(toColumn);
 
 
-        if (!fromField.isEmpty() && fromField.getStone().getOwnerColor().equals(actualPlayer.getPlayerColor()) && toField.isEmpty() &&
-                (((fromRow + 1 == toRow || fromRow - 1 == toRow) && fromColumn.intValue() == toColumn.intValue())
-                        || ((fromColumn + 1 == toColumn || fromColumn - 1 == toColumn) && toRow.intValue() == fromRow.intValue()))) {
+            if (!fromField.isEmpty() && fromField.getStone().getOwnerColor().equals(actualPlayer.getPlayerColor()) && toField.isEmpty() &&
+                    (((fromRow + 1 == toRow || fromRow - 1 == toRow) && fromColumn.intValue() == toColumn.intValue())
+                            || ((fromColumn + 1 == toColumn || fromColumn - 1 == toColumn) && toRow.intValue() == fromRow.intValue()))) {
 
-            Logger.info("Sikeres mozgatás");
-            toField.setEmpty(false);
-            toField.setStone(fromField.getStone());
+                Logger.info("Sikeres mozgatás");
+                toField.setEmpty(false);
+                toField.setStone(fromField.getStone());
 
-            fromField.setEmpty(true);
-            fromField.setStone(null);
-        } else {
-            Logger.info("Sikertelen mozgatás");
+                fromField.setEmpty(true);
+                fromField.setStone(null);
+            } else {
+                Logger.info("Sikertelen mozgatás");
+                System.out.println("Ezt nem lépheted meg,kérlek válassz egy másik helyes lépést.");
+                processChoice(actualBoard, actualPlayer);
+            }
+        } catch (Exception e) {
+            Logger.error("Hibás bemenet");
             System.out.println("Ezt nem lépheted meg,kérlek válassz egy másik helyes lépést.");
             processChoice(actualBoard, actualPlayer);
         }
