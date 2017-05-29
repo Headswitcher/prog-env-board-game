@@ -226,7 +226,7 @@ public class Board {
     }
 
     /**
-     * Vissza adja az aktuális tábla sor méretét
+     * Vissza adja az aktuális tábla sor méretét.
      *
      * @return <code>actualBoard</code> Sor méretét adja vissza.
      */
@@ -235,7 +235,7 @@ public class Board {
     }
 
     /**
-     * Visszaadja az aktuális tábla oszlop méretét
+     * Visszaadja az aktuális tábla oszlop méretét.
      *
      * @return <code>actualBoard</code> oszlop méretét adja vissza.
      */
