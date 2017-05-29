@@ -25,7 +25,6 @@ public class GamePlayUtil {
      *
      * @param actualBoard  Az aktuális tábla
      * @param actualPlayer Az aktuális játékos
-     * @throws IOException ha a bemenet hibás
      */
     public static void processChoice(Board actualBoard, Player actualPlayer) {
         Logger.info("GamePlayUtil.processChoice " + actualBoard + " " + actualPlayer.getPlayerColor());

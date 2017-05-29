@@ -35,11 +35,11 @@ public class Main {
         player1.setName("Első játékos");
         player2.setName("Második Játékos");
 
-        System.out.println("Válasz egy korongot , majd hogy melyik pozítcióra lépnél vele!");
+        System.out.println("Válassz egy korongot , majd hogy melyik pozícióra lépnél vele!");
         System.out.println("Az alábbi formában: (SOR,OSZLOP)-(SOR,OSZLOP)");
-        System.out.println("Az első két pos írja le hogy honnan a második hogy hova");
+        System.out.println("Az első két pozíció írja le, hogy honnan a második hogy hova");
         System.out.println("Például: 0,0-1,0");
-        System.out.println("Fel,le,jobbra,illetve balra léphetsz a saját korongoddal egy nemüres pozítcióra");
+        System.out.println("Fel,le,jobbra,illetve balra léphetsz a saját korongoddal egy nemüres pozícióra");
         Logger.info("Körök kezdete");
         while (!board.isGameOver()) {
             Logger.info("Kör kezdete");

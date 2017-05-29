@@ -93,6 +93,9 @@ public class Board {
      */
     public void printActualBoard() {
         for (int i = 0; i < rowSize; i++) {
+            if (i == 0) {
+                System.out.print("\n+---+---+---+---+\n");
+            }
             for (int j = 0; j < columnSize; j++) {
                 Field actualField = actualBoard.get(i).get(j);
                 if (j == 0) {
